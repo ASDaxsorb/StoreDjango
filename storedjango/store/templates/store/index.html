@@ -1,0 +1,7 @@
+{% extends 'store/base.html' %} {% block content %}
+<ol>
+  {% for product in products %}
+  <li><a href="{% url 'store:product_detail' product.id %}"> {{ product.name }} </a></li>
+  {% endfor %}
+</ol>
+{% endblock %}
