@@ -1,0 +1,16 @@
+{
+  "name": "storedjango",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./store/static/store/src/tailwind.css -o ./store/static/store/css/main.css --minify --watch"
+  },
+  "keywords": [],
+  "author": "Axell Solis <axellsolisrubio@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}

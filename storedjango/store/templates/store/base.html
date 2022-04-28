@@ -6,12 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} Store {% endblock title %}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href={% static 'store/css/main.css' %}/>
   </head>
   <body>
+    <header>
+      <nav class="bg-white shadow-md">
+        <div class="flex items-center max-w-6xl m-auto px-4">
+          <div class="p-4 flex items-center">
+            <img class="h-8 w-8" src="{% static 'store/images/logo.png' %}" alt="image logo">
+            <span class="font-bold text-gray-600">Buy&Sell</span>
+          </div>
+          <ul class="flex ml-3 space-x-4">
+            <li><a class="px-2 py-4 border-b-4 border-green-500" href="#">Home</a></li>
+            <li><a class="px-2 py-4" href="#">About</a></li>
+            <li><a class="px-2 py-4" href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <main>{% block content %} {% endblock %}</main>
   </body>
 </html>

@@ -4,7 +4,7 @@ from .models import Product
 
 
 def index(request):
-    return HttpResponse("Store App")
+    return HttpResponse("<p>Que hay</p>")
 
 
 def products(request):
