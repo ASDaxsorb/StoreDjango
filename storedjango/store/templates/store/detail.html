@@ -1,8 +1,20 @@
 {% extends 'store/base.html' %}
 {% block content %}
-  <h3> {{ product.name }} </h3>
-  <span> ${{ product.price }} </span>
-  <p>
-    {{ product.description }}
-  </p>
+
+<article class="px-6">
+
+  <img class="hover:scale-50 absolute self-center" src="{{ product.image.url }}" alt="{{ product.name }} image">
+  
+  <div class="h-screen relative flex justify-center items-center">
+    <section class="p-6 w-full h-96 bg-white/60 backdrop-blur-lg rounded-lg shadow-lg">
+      <h2 class="text-4xl uppercase font-bold text-gray-800"> {{ product.name }} </h2>
+      <p class="text-lg mt-3 text-green-500 font-semibold">$ {{ product.price }}</p>
+      <p class="mt-3 text-lg font-medium text-gray-800">
+        {{ product.description }}
+      </p>
+    </section>
+  </div>
+
+</article>
+
 {% endblock %}
