@@ -1,0 +1,32 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+<section class="container p-5">
+    <h1 class="text-3xl font-bold mb-4">👤 Register</h1>
+    <form action="{% url 'users:register' %}" method="POST" class="w-2/5 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      {% csrf_token %}
+      <div class="mb-2">
+        <label for="id_username" class="block text-gray-700 text-sm font-bold mb-2">Username</label>
+        <div class="shadow appearance-none border-none rounded py-2 px-3 mr-10 text-gray-700 leading-tight">{{ form.username }}</div>
+      </div>
+
+      <div class="mb-2">
+        <label for="id_email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+        <div class="shadow appearance-none border-none rounded py-2 px-3 mr-10 text-gray-700 leading-tight">{{ form.email }}</div>
+      </div>
+
+      <div class="mb-2">
+        <label for="id_password1" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+        <div class="shadow appearance-none border-none rounded py-2 px-3 mr-10 text-gray-700 leading-tight">{{ form.password1 }}</div>
+      </div>
+
+      <div class="mb-2">
+        <label for="id_password2" class="block text-gray-700 text-sm font-bold mb-2">Confirm password</label>
+        <div class="shadow appearance-none border-none rounded py-2 px-3 mr-10 text-gray-700 leading-tight">{{ form.password2 }}</div>
+      </div>
+      
+      <button type="submit" class="px-6 py-2 bg-green-500 text-white font-bold mt-4 rounded transition-shadow hover:shadow-md">Register</button>
+    </form>
+  </section>
+{% endblock %}
+
