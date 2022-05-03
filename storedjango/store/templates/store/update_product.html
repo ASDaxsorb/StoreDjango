@@ -1,7 +1,7 @@
 {% extends 'store/base.html' %}
 
 {% block content %}
-  <form class="flex flex-col items-start p-6 rounded-lg shadow-lg" action="{% url 'store:add_product' %}" method="POST" enctype="multipart/form-data">
+  <form class="flex flex-col items-start p-6 rounded-lg shadow-lg" action="{% url 'store:update_product' product.id %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="flex flex-col my-3">
       <label for="name" class="text-lg cursor font-medium text-gray-800"> Product name </label>
@@ -24,7 +24,7 @@
       <label for="upload" class="text-lg cursor font-medium text-gray-800"> Product Image </label>
       <input type="file" accept="image/*" name="upload" id="upload"/>
     </div>
-    <input class="block mt-4 px-5 py-2 text-lg text-white font-medium bg-green-500 rounded-md cursor-pointer transition-all focus:bg-green-600 hover:shadow-lg" type="submit" value="Add Product"/>
+    <input class="block mt-4 px-5 py-2 text-lg text-white font-medium bg-green-500 rounded-md cursor-pointer transition-all focus:bg-green-600 hover:shadow-lg" type="submit" value="Save"/>
   </form>
 {% endblock  %}
 
