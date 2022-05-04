@@ -19,11 +19,21 @@
             <span class="font-bold text-gray-600">Buy&Sell</span>
           </div>
 
-          <ul class="flex ml-3 space-x-4">
-            <li><a href="{% url 'store:products' %}" class="px-2 py-4 border-b-4 border-green-500">Home</a></li>
-            <li><a href="#" class="px-2 py-4" >About</a></li>
-            <li><a href="#" class="px-2 py-4" >Contact</a></li>
-          </ul>
+          <div class="w-full flex justify-between ml-3">
+            <ul class="flex items-center space-x-4">
+              <li><a href="{% url 'store:products' %}" class="block px-2 py-4 border-b-4 border-green-500">Home</a></li>
+              <li><a href="#" class="block px-2 py-4" >About</a></li>
+              <li><a href="#" class="block px-2 py-4" >Contact</a></li>
+            </ul>
+            <div class="flex items-center space-x-2">
+              {% if user.is_authenticated %}
+                <p class="px-4 py-2 text-white font-bold rounded-full bg-green-500">{{ user.username | capfirst }}</p>
+                <a class="block px-6 my-2 py-2 rounded transition-all hover:bg-red-200" href="{% url 'users:logout' %}">Logout</a>
+              {% else %}
+                <a class="block px-6 my-2 py-2 rounded transition-all hover:bg-green-200" href="{% url 'users:login' %}">Login</a>
+              {% endif %}
+            </div>
+          </div>
         </div>
       </nav>
     </header>

@@ -6,10 +6,9 @@ from .forms import NewUserForm
 
 def register(request: HttpRequest):
     if request.method == "POST":
-
         form = NewUserForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            form.save()
             return redirect(reverse("store:products"))
 
     form = NewUserForm()
