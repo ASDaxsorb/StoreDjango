@@ -27,7 +27,7 @@
             </ul>
             <div class="flex items-center space-x-2">
               {% if user.is_authenticated %}
-                <p class="px-4 py-2 text-white font-bold rounded-full bg-green-500">{{ user.username | capfirst }}</p>
+                <a href="{% url 'users:profile' %}" class="px-4 py-2 text-white font-bold rounded-full bg-green-500">{{ user.username | capfirst }}</a>
                 <a class="block px-6 my-2 py-2 rounded transition-all hover:bg-red-200" href="{% url 'users:logout' %}">Logout</a>
               {% else %}
                 <a class="block px-6 my-2 py-2 rounded transition-all hover:bg-green-200" href="{% url 'users:login' %}">Login</a>

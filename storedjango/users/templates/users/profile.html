@@ -1,0 +1,11 @@
+{% extends "store/base.html" %}
+{% block content %}
+   <section class="grid grid-cols-1 p-10 lg:grid-cols-3 sm:grid-cols-1">
+      <div class="rounded shadow-lg p-6">
+         <div>
+            <img src="{{ user.profile.image.url }}" alt="Profile picture">
+         </div>
+         <p class="font-bold text-3xl text-center">{{ user.username|capfirst }}</p>
+      </div>
+   </section> 
+{% endblock %}

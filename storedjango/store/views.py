@@ -56,10 +56,12 @@ def update_product(request: HttpRequest, id):
 
 def delete(request: HttpRequest, id):
     product = get_object_or_404(Product, pk=id)
-    context = {"product": product,}
+    context = {
+        "product": product,
+    }
 
     if request.method == "POST":
         product.delete()
         return redirect(reverse("store:products"))
-        
+
     return render(request, "store/delete.html", context)
