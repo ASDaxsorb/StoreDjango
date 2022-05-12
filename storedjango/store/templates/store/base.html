@@ -22,8 +22,8 @@
           <div class="w-full flex justify-between ml-3">
             <ul class="flex items-center space-x-4">
               <li><a href="{% url 'store:products' %}" class="block px-2 py-4 border-b-4 border-green-500">Home</a></li>
-              <li><a href="#" class="block px-2 py-4" >About</a></li>
-              <li><a href="#" class="block px-2 py-4" >Contact</a></li>
+              <li><a href="{% url 'store:add_product' %}" class="block px-2 py-4" >Post and Add</a></li>
+              <li><a href="#" class="block px-2 py-4" >View products</a></li>
             </ul>
             <div class="flex items-center space-x-2">
               {% if user.is_authenticated %}

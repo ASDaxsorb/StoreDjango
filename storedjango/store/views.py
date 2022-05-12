@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest, HttpResponse
 from django.urls import reverse
 from .models import Product
@@ -20,15 +21,16 @@ def product_detail(request, id):
     context = {"product": product}
     return render(request, "store/detail.html", context)
 
-
+@login_required
 def add_product(request):
     if request.method == "POST":
         name = request.POST.get("name")
         price = request.POST.get("price")
         description = request.POST.get("description")
         image = request.FILES["upload"]
+        seller = request.user
         Product.objects.create(
-            name=name, price=price, description=description, image=image
+            name=name, price=price, description=description, image=image, seller=seller
         )
 
     return render(request, "store/add_product.html")

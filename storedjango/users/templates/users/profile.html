@@ -2,10 +2,21 @@
 {% block content %}
    <section class="grid grid-cols-1 p-10 lg:grid-cols-3 sm:grid-cols-1">
       <div class="rounded shadow-lg p-6">
-         <div>
-            <img src="{{ user.profile.image.url }}" alt="Profile picture">
-         </div>
+         <div class="flex flex-col items-center">
+            {% if user.profile.image %}
+               <img src="{{ user.profile.image.url }}" alt="Profile picture" class="w-56 h-56">
+            {% else %}
+               <div class="bg-gray-500 w-56 h-56 mb-3 rounded-full"></div>
+            {% endif %}
          <p class="font-bold text-3xl text-center">{{ user.username|capfirst }}</p>
       </div>
+      {% if user.profile %}
+         <div class="my-2">
+            <p class="text-gray-800">Contact: {{ user.profile.contact_number }}</p>
+         </div>
+         <article>
+            {{ user.profile.about }}
+         </article>
+      {% endif %}
    </section> 
 {% endblock %}

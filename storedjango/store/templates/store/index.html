@@ -21,7 +21,8 @@
           <img class="w-full object-cover" src="{{ product.image.url }}" alt="{{ product.name }} image">
           <div class="mt-2">
             <p class="text-xl text-gray-800 font-bold uppercase">{{ product.name }}</p>
-            <p class="text-lg text-green-500 font-semibold">$ {{ product.price }}</p>
+            <span class="text-gray-600">By <span class="text-purple-400">{{ product.seller.username|capfirst }}</span></span>
+            <p class="text-lg text-green-500 font-semibold">${{ product.price }}</p>
           </div>
         </div>
       </a>

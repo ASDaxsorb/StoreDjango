@@ -1,7 +1,20 @@
 {% extends 'store/base.html' %}
 
 {% block content %}
-  <form method="post" enctype="multipart/form-data"> 
+  <form method="post" enctype="multipart/form-data" class="bg-white shadow-lg p-4"> 
     {% csrf_token %}
+    <div class="flex flex-col mb-3">
+      <label class="mb-2">Upload Image</label>
+      <input type="file" accept="image/*" name="upload" id="upload" placeholder="Upload profile image"/>
+    </div>
+    <div class="flex flex-col mb-3">
+      <label class="mb-2" for="contact_number">Contact number</label>
+      <input type="tel" name="contact_number" id="contact_number" class="max-w-sm p-2 outline-0 outline-none shadow-lg transition-shadow focus:bg-green-100/20 focus:shadow-green-100 rounded border"/>
+    </div>
+    <div class="flex flex-col mb-3">
+      <label class="mb-2" for="about">About you</label>
+      <textarea name="about" id="about" class="max-w-sm p-2 outline-0 outline-none shadow-lg transition-shadow focus:bg-green-100/20 focus:shadow-green-100 rounded border"></textarea>
+    </div>
+    <input type="submit" class="px-6 py-2 rounded-md shadow-md mt-3 text-white font-bold bg-green-500 cursor-pointer transition-colors hover:bg-green-500/80" value="SAVE"/>
   </form>
 {% endblock%}

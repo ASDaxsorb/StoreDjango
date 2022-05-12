@@ -11,6 +11,7 @@
     </div>
     <section class="mt-4 md:mt-0">
       <h2 class="text-4xl font-bold uppercase text-gray-800">{{ product.name }}</h2>
+      <span class="block my-2 text-gray-600">By <a href="{% url 'users:seller_profile' product.seller.id %}" class="text-purple-400">{{ product.seller.username|capfirst }}</a></span>
       <span class="block text-green-500 text-4xl font-semibold">${{ product.price }}</span>
       <p class="mt-2 md:mt-6 md:pt-3 md:border-t-4 md:border-t-green-200 border-3px text-gray-700 font-medium">{{ product.description }}</p>
     </section>
